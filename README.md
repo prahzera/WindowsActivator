@@ -17,7 +17,7 @@ Esta herramienta es solo para fines educativos. Asegúrate de tener derecho a ac
 ## Requisitos
 
 - Sistema operativo Windows (requerido para los comandos de activación)
-- Node.js y npm instalados
+- Node.js y npm instalados (Solo para ejecutar el proyecto en codigo, no es necesario para ejecutar el archivo .exe de Release)
 
 ## Instalación
 
