@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVADOR WIN 10/11 by Prahzera</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra superior personalizada -->
+    <div class="title-bar">
+        <div class="title-bar-drag-region"></div>
+        <div class="title-bar-text">ACTIVADOR WIN 10/11 by Prahzera</div>
+        <div class="title-bar-controls">
+            <button id="minimize-btn" class="title-bar-button" title="Minimize">
+                <svg width="12" height="12" viewBox="0 0 12 12">
+                    <path d="M0 5h12v2H0z" fill="currentColor"/>
+                </svg>
+            </button>
+            <button id="maximize-btn" class="title-bar-button" title="Maximize">
+                <svg width="12" height="12" viewBox="0 0 12 12">
+                    <path d="M1 1h10v10H1V1zm1 1v8h8V2H2z" fill="currentColor"/>
+                </svg>
+            </button>
+            <button id="close-btn" class="title-bar-button close" title="Close">
+                <svg width="12" height="12" viewBox="0 0 12 12">
+                    <path d="M0 0L12 12M12 0L0 12" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    
+    <div class="main-container">
+        <!-- Panel izquierdo con logo e información -->
+        <div class="left-panel">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo" class="logo-img">
+            </div>
+            <div class="app-info">
+                <h1>ACTIVADOR WIN 10/11</h1>
+                <p class="version">v1.0</p>
+                <div class="system-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M20 18v-1c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2v1H0v2h24v-2h-4zM4 5h16v10H4V5z"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>SISTEMA DETECTADO</h3>
+                            <p id="detected-system">Detectando...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Panel derecho con formulario y controles -->
+        <div class="right-panel">
+            <div class="form-container">
+                <div class="warning-box">
+                    <div class="warning-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                        </svg>
+                    </div>
+                    <div class="warning-text">
+                        <strong>ADVERTENCIA:</strong> Esta herramienta es ILEGAL KP. Pero ni bollo tenes que estar por la vida arma.
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edition">
+                        <div class="input-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M20 18v-1c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2v1H0v2h24v-2h-4zM4 5h16v10H4V5z"/>
+                            </svg>
+                        </div>
+                        EDICIÓN DE WINDOWS
+                    </label>
+                    <select id="edition">
+                        <option value="">Seleccionando edición...</option>
+                    </select>
+                </div>
+                
+                <button id="activate-btn" class="activate-button">
+                    <div class="button-content">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M13 10h7l-9 13v-10h-7l9-13v10z"/>
+                        </svg>
+                        <span>ACTIVAR WINDOWS</span>
+                    </div>
+                </button>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Activando Windows...</p>
+                </div>
+                
+                <div class="result" id="result"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Activador Windows v1.0 | Activa tu Windows gratis nde pobretón</p>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

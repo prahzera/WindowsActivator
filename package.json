@@ -1,0 +1,58 @@
+{
+  "name": "windows-activator",
+  "version": "1.0.0",
+  "description": "Windows Activator using KMS",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "build": "electron-builder",
+    "build-portable": "electron-builder --win portable"
+  },
+  "keywords": [
+    "electron",
+    "windows",
+    "activation"
+  ],
+  "author": "Prahzera",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "dependencies": {
+    "sudo-prompt": "^9.2.1"
+  },
+  "build": {
+    "appId": "com.prahzera.windows-activator",
+    "productName": "Windows Activator",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "styles.css",
+      "logo.png",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "logo.png"
+    },
+    "portable": {
+      "artifactName": "${productName}-portable.exe"
+    }
+  }
+}
