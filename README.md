@@ -1,4 +1,5 @@
 # Activador de Windows
+<img width="600" height="600" alt="logo" src="https://github.com/user-attachments/assets/c4d02474-18a2-4696-b8a3-5e1cab7bc59c" />
 
 Una aplicación Electron simple que ejecuta comandos de activación de Windows usando KMS.
 
@@ -7,6 +8,7 @@ Una aplicación Electron simple que ejecuta comandos de activación de Windows u
 Esta herramienta es solo para fines educativos. Asegúrate de tener derecho a activar tu copia de Windows. Usar activación KMS en sistemas que no te pertenecen puede violar acuerdos de licencia.
 
 ## Características
+
 
 - Detección automática de la versión de Windows (10 o 11)
 - Interfaz gráfica simple para la activación de Windows
