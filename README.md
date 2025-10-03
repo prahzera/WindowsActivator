@@ -3,6 +3,8 @@
 
 Una aplicación Electron simple que ejecuta comandos de activación de Windows usando KMS.
 
+<img width="962" height="539" alt="Screenshot_1" src="https://github.com/user-attachments/assets/9db68e74-caf5-4258-9974-20cf5ccd92ee" />
+
 ## Descargo de responsabilidad
 
 Esta herramienta es solo para fines educativos. Asegúrate de tener derecho a activar tu copia de Windows. Usar activación KMS en sistemas que no te pertenecen puede violar acuerdos de licencia.
