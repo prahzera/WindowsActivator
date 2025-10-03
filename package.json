@@ -2,7 +2,7 @@
   "name": "windows-activator",
   "version": "1.0.0",
   "description": "Windows Activator using KMS",
-  "main": "main.js",
+  "main": "src/main/main.js",
   "scripts": {
     "start": "electron .",
     "dev": "electron . --dev",
@@ -32,12 +32,7 @@
       "output": "dist"
     },
     "files": [
-      "main.js",
-      "preload.js",
-      "renderer.js",
-      "index.html",
-      "styles.css",
-      "logo.png",
+      "src/**/*",
       "package.json"
     ],
     "win": {
@@ -49,7 +44,7 @@
           ]
         }
       ],
-      "icon": "logo.png"
+      "icon": "src/assets/logo.png"
     },
     "portable": {
       "artifactName": "${productName}-portable.exe"

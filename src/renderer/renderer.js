@@ -1,4 +1,4 @@
-// Wait for the DOM to be fully loaded
+// Esperamos a que el DOM se cargue completamente
 document.addEventListener('DOMContentLoaded', async () => {
     const editionSelect = document.getElementById('edition');
     const activateBtn = document.getElementById('activate-btn');
@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const loadingDiv = document.getElementById('loading');
     const detectedSystem = document.getElementById('detected-system');
     
-    // Handle custom title bar controls
+    // Manejamos los controles de la barra de título personalizada
     const minimizeBtn = document.getElementById('minimize-btn');
     const maximizeBtn = document.getElementById('maximize-btn');
     const closeBtn = document.getElementById('close-btn');
@@ -29,21 +29,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
     
-    // Load Windows editions
+    // Cargamos las ediciones de Windows
     try {
-        // Detect Windows version and edition
+        // Detectamos la versión y edición de Windows
         const windowsInfo = await window.electronAPI.detectWindowsInfo();
-        console.log('Windows Info:', windowsInfo);
+        console.log('Información de Windows:', windowsInfo);
         
-        // Display Windows information
+        // Mostramos la información de Windows
         detectedSystem.textContent = `${windowsInfo.version} ${windowsInfo.edition}`;
         
         const { editions } = await window.electronAPI.getWindowsEditions();
         
-        // Clear loading option
+        // Limpiamos la opción de carga
         editionSelect.innerHTML = '';
         
-        // Populate the select dropdown
+        // Poblamos el menú desplegable
         editions.forEach(edition => {
             const option = document.createElement('option');
             option.value = edition.key;
@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             editionSelect.appendChild(option);
         });
         
-        // Try to auto-select edition based on detected info
+        // Intentamos seleccionar automáticamente la edición basada en la información detectada
         if (windowsInfo.edition !== 'Unknown') {
-            // Map detected edition to our list
+            // Mapeamos la edición detectada a nuestra lista
             const editionMap = {
                 'Professional': 'Professional',
                 'Pro': 'Professional',
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             const mappedEdition = editionMap[windowsInfo.edition];
             if (mappedEdition) {
-                // Find the corresponding option and select it
+                // Encontramos la opción correspondiente y la seleccionamos
                 for (let i = 0; i < editionSelect.options.length; i++) {
                     if (editionSelect.options[i].text.includes(mappedEdition)) {
                         editionSelect.selectedIndex = i;
@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     } catch (error) {
         detectedSystem.textContent = 'Error al detectar el sistema';
-        showResult('Failed to load Windows information: ' + error.message, 'error');
+        showResult('Error al cargar la información de Windows: ' + error.message, 'error');
         
-        // Load editions anyway
+        // Cargamos las ediciones de todos modos
         try {
             const { editions } = await window.electronAPI.getWindowsEditions();
             editionSelect.innerHTML = '';
@@ -88,28 +88,28 @@ document.addEventListener('DOMContentLoaded', async () => {
                 editionSelect.appendChild(option);
             });
         } catch (editionError) {
-            showResult('Failed to load Windows editions: ' + editionError.message, 'error');
+            showResult('Error al cargar las ediciones de Windows: ' + editionError.message, 'error');
         }
     }
     
-    // Handle activation button click
+    // Manejamos el clic del botón de activación
     activateBtn.addEventListener('click', async () => {
         const selectedKey = editionSelect.value;
-        const kmsServer = 'kms.msguides.com'; // Hardcoded server
+        const kmsServer = 'kms.msguides.com'; // Servidor codificado
         
-        // Validate inputs
+        // Validamos las entradas
         if (!selectedKey) {
             showResult('Por favor selecciona una edición de Windows', 'error');
             return;
         }
         
-        // Disable button and show loading
+        // Deshabilitamos el botón y mostramos la carga
         activateBtn.disabled = true;
         loadingDiv.style.display = 'block';
         resultDiv.style.display = 'none';
         
         try {
-            // Call the activation function
+            // Llamamos a la función de activación
             const result = await window.electronAPI.activateWindows({
                 editionKey: selectedKey,
                 kmsServer: kmsServer
@@ -123,13 +123,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         } catch (error) {
             showResult(`Activación fallida: ${error.message}`, 'error');
         } finally {
-            // Re-enable button and hide loading
+            // Rehabilitamos el botón y ocultamos la carga
             activateBtn.disabled = false;
             loadingDiv.style.display = 'none';
         }
     });
     
-    // Helper function to show results
+    // Función auxiliar para mostrar resultados
     function showResult(message, type) {
         resultDiv.innerHTML = `
             <div class="status-indicator ${type === 'success' ? 'status-active' : 'status-inactive'}"></div>
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         resultDiv.className = `result ${type}`;
         resultDiv.style.display = 'block';
         
-        // Scroll to result
+        // Desplazamos al resultado
         resultDiv.scrollIntoView({ behavior: 'smooth' });
     }
 });

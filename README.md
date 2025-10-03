@@ -1,68 +1,72 @@
-# Windows Activator
+# Activador de Windows
 
-A simple Electron application that executes Windows activation commands using KMS.
+Una aplicación Electron simple que ejecuta comandos de activación de Windows usando KMS.
 
-## Disclaimer
+## Descargo de responsabilidad
 
-This tool is for educational purposes only. Make sure you have the right to activate your copy of Windows. Using KMS activation on systems you don't own may violate licensing agreements.
+Esta herramienta es solo para fines educativos. Asegúrate de tener derecho a activar tu copia de Windows. Usar activación KMS en sistemas que no te pertenecen puede violar acuerdos de licencia.
 
-## Features
+## Características
 
-- Automatic detection of Windows version (10 or 11)
-- Simple graphical interface for Windows activation
-- Supports all Windows 10/11 editions
-- Executes activation commands with administrative privileges
-- Built with Electron for cross-platform compatibility
+- Detección automática de la versión de Windows (10 o 11)
+- Interfaz gráfica simple para la activación de Windows
+- Soporta todas las ediciones de Windows 10/11
+- Ejecuta comandos de activación con privilegios administrativos
+- Construido con Electron para compatibilidad multiplataforma
 
-## Requirements
+## Requisitos
 
-- Windows OS (required for activation commands)
-- Node.js and npm installed
+- Sistema operativo Windows (requerido para los comandos de activación)
+- Node.js y npm instalados
 
-## Installation
+## Instalación
 
-1. Clone or download this repository
-2. Install dependencies:
+1. Clona o descarga este repositorio
+2. Instala las dependencias:
    ```
    npm install
    ```
 
-## Usage
+## Uso
 
-1. Run the application:
+1. Ejecuta la aplicación:
    ```
    npm start
    ```
 
-2. The application will automatically detect your Windows version
-3. Select your Windows edition from the dropdown
-4. Optionally change the KMS server (default is kms.msguides.com)
-5. Click "Activate Windows"
-6. Grant administrative privileges when prompted
-7. Check your Windows activation status
+2. La aplicación detectará automáticamente tu versión de Windows
+3. Selecciona tu edición de Windows del menú desplegable
+4. Opcionalmente cambia el servidor KMS (por defecto es kms.msguides.com)
+5. Haz clic en "Activar Windows"
+6. Otorga privilegios administrativos cuando se te solicite
+7. Verifica el estado de activación de Windows
 
-## How It Works
+## Uso de la versión compilada
 
-The application executes these commands in sequence:
+Si descargas la versión compilada del proyecto en la sección de Releases, simplemente ejecuta el archivo .exe y haz clic en el botón "Activar Windows". La aplicación detectará automáticamente tu versión de Windows y te permitirá seleccionar la edición correspondiente.
 
-1. Installs the KMS client key for your Windows edition:
+## Cómo funciona
+
+La aplicación ejecuta estos comandos en secuencia:
+
+1. Instala la clave de cliente KMS para tu edición de Windows:
    ```
-   slmgr /ipk YOUR_LICENSE_KEY
+   slmgr /ipk TU_CLAVE_DE_LICENCIA
    ```
 
-2. Sets the KMS server address:
+2. Establece la dirección del servidor KMS:
    ```
    slmgr /skms kms.msguides.com
    ```
 
-3. Activates Windows:
+3. Activa Windows:
    ```
    slmgr /ato
    ```
 
-## Supported Windows Editions
+## Ediciones de Windows soportadas
 
-Both Windows 10 and Windows 11 editions:
+Ediciones para Windows 10 y Windows 11:
 - Home: TX9XD-98N7V-6WMQ6-BX7FG-H8Q99
 - Home N: 3KHY7-WNT83-DGQKR-F7HPR-844BM
 - Home Single Language: 7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH
@@ -74,19 +78,19 @@ Both Windows 10 and Windows 11 editions:
 - Enterprise: NPPR9-FWDCX-D2C8J-H872K-2YT43
 - Enterprise N: DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4
 
-## Troubleshooting
+## Solución de problemas
 
-For Windows 10:
-- If you encounter error 0xC004F074:
-  - Ensure you have a stable internet connection
-  - Try again later (the KMS server might be busy)
-  - Verify you've selected the correct Windows edition
+Para Windows 10:
+- Si encuentras el error 0xC004F074:
+  - Asegúrate de tener una conexión a internet estable
+  - Inténtalo de nuevo más tarde (el servidor KMS podría estar ocupado)
+  - Verifica que hayas seleccionado la edición correcta de Windows
 
-For Windows 11:
-- If you encounter error 0x80070005:
-  - The server is busy, try the command again until you succeed
-  - Verify you've selected the correct Windows edition
+Para Windows 11:
+- Si encuentras el error 0x80070005:
+  - El servidor está ocupado, intenta el comando de nuevo hasta que tenga éxito
+  - Verifica que hayas seleccionado la edición correcta de Windows
 
-## License
+## Licencia
 
-MIT License
+Licencia MIT
