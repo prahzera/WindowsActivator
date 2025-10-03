@@ -1,9 +1,16 @@
 # Activador de Windows
-<img width="600" height="600" alt="logo" src="https://github.com/user-attachments/assets/c4d02474-18a2-4696-b8a3-5e1cab7bc59c" />
 
-Una aplicación Electron simple que ejecuta comandos de activación de Windows usando KMS.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c4d02474-18a2-4696-b8a3-5e1cab7bc59c" alt="Logo del Activador de Windows" width="200" height="200">
+</p>
 
-<img width="962" height="539" alt="Screenshot_1" src="https://github.com/user-attachments/assets/9db68e74-caf5-4258-9974-20cf5ccd92ee" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9db68e74-caf5-4258-9974-20cf5ccd92ee" alt="Captura de pantalla de la interfaz" width="600">
+</p>
+
+<p align="center">
+  Una aplicación Electron moderna que ejecuta comandos de activación de Windows usando KMS
+</p>
 
 ## Descargo de responsabilidad
 
@@ -11,17 +18,16 @@ Esta herramienta es solo para fines educativos. Asegúrate de tener derecho a ac
 
 ## Características
 
-
-- Detección automática de la versión de Windows (10 o 11)
-- Interfaz gráfica simple para la activación de Windows
-- Soporta todas las ediciones de Windows 10/11
-- Ejecuta comandos de activación con privilegios administrativos
-- Construido con Electron para compatibilidad multiplataforma
+- 🔍 **Detección automática** de la versión de Windows (10 o 11)
+- 🎨 **Interfaz gráfica moderna** con diseño profesional
+- 🔄 **Soporte completo** para todas las ediciones de Windows 10/11
+- ⚡ **Ejecución de comandos** con privilegios administrativos
+- 🖥️ **Construido con Electron** para compatibilidad multiplataforma
 
 ## Requisitos
 
 - Sistema operativo Windows (requerido para los comandos de activación)
-- Node.js y npm instalados (Solo para ejecutar el proyecto en codigo, no es necesario para ejecutar el archivo .exe de Release)
+- Node.js y npm instalados (Solo para ejecutar el proyecto en código, no es necesario para ejecutar el archivo .exe de Release)
 
 ## Instalación
 
@@ -48,6 +54,15 @@ Esta herramienta es solo para fines educativos. Asegúrate de tener derecho a ac
 ## Uso de la versión compilada
 
 Si descargas la versión compilada del proyecto en la sección de Releases, simplemente ejecuta el archivo .exe y haz clic en el botón "Activar Windows". La aplicación detectará automáticamente tu versión de Windows y te permitirá seleccionar la edición correspondiente.
+
+### Interfaz de usuario
+
+La interfaz presenta un diseño moderno y profesional con dos paneles principales:
+
+- **Panel izquierdo**: Muestra el logo de la aplicación y la información del sistema detectado
+- **Panel derecho**: Contiene el formulario de selección de edición y el botón de activación
+
+La aplicación utiliza una paleta de colores moderna con degradados y efectos visuales para crear una experiencia de usuario atractiva.
 
 ## Cómo funciona
 
